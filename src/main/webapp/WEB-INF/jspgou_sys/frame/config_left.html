@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>jspgou-left</title>
+<#include "/jspgou_sys/head.html"/>
+<script type="text/javascript">
+$(function(){
+	JCore.lmenu('lmenu');
+});
+</script>
+</head>
+<body class="lbody">
+<ul id="lmenu">
+<li><a href="config_right.do" target="rightFrame"><@s.m "global.admin.index"/></a></li>
+<@authorize url="config/v_global_edit.do"> 
+<li><a href="../config/v_global_edit.do" target="rightFrame"><@s.m "shop.config.global.function"/></a></li>
+</@authorize>
+<@authorize url="config/v_basic_edit.do"> 
+<li><a href="../config/v_basic_edit.do" target="rightFrame"><@s.m "shop.config.basic.function"/></a></li>
+</@authorize>
+<@authorize url="config/v_email_edit.do"> 
+<li><a href="../config/v_email_edit.do" target="rightFrame"><@s.m "shop.config.email.function"/></a></li> 
+</@authorize>
+<@authorize url="shipping/v_list.do"> 
+<li><a href="../shipping/v_list.do" target="rightFrame"><@s.m "shipping.function"/></a></li>
+</@authorize>
+<@authorize url="payment/v_list.do"> 
+<li><a href="../payment/v_list.do" target="rightFrame"><@s.m "payment.function"/></a></li>
+</@authorize>
+<@authorize url="tag/v_list.do"> 
+<li><a href="../tag/v_list.do" target="rightFrame"><@s.m "productTag.function"/></a></li>
+</@authorize>
+<@authorize url="type/v_list.do"> 
+<li><a href="../type/v_list.do" target="rightFrame"><@s.m "productType.function"/></a></li>
+</@authorize>
+<@authorize url="adspace/v_list.do"> 
+<li><a href="../admin/v_list.do" target="rightFrame"><@s.m "admin.function"/></a></li> 
+</@authorize>
+<@authorize url="commonAdmin/v_list.do">  
+<li><a href="../commonAdmin/v_list.do" target="rightFrame">管理员解锁</a></li>
+</@authorize>
+<@authorize url="customerService/v_list.do"> 
+<li><a href="../customerService/v_list.do" target="rightFrame">在线客服</a></li>
+</@authorize>
+<@authorize url="role/v_list.do"> 
+<li><a href="../role/v_list.do" target="rightFrame">角色管理</a></li>
+</@authorize>
+<@authorize url="logistics/v_list.do"> 
+<li><a href="../logistics/v_list.do" target="rightFrame">物流公司</a></li>
+</@authorize>
+<@authorize url="plugins/v_list.do"> 
+<li><a href="../plugins/v_list.do" target="rightFrame">支付插件</a></li>
+</@authorize>
+<@authorize url="log/v_list.do"> 
+<li><a href="../log/v_list.do" target="rightFrame">更新日志</a></li>
+</@authorize>
+<@authorize url="product/o_create_index.do"> 
+<li><a href="../product/o_create_index.do" target="rightFrame"><@s.m "product.createIndex"/></a></li>
+</@authorize>
+</ul>
+</body>
+</html>

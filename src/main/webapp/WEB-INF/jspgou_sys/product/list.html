@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title></title>
+<#include "/jspgou_sys/head.html"/>
+<script type="text/javascript">
+function optDelete() {
+	if(Pn.checkedCount('ids')<=0) {
+		alert("<@s.m 'error.checkRecord'/>");
+		return;
+	}
+	if(!confirm("<@s.m 'global.confirm.delete'/>")) {
+		return;
+	}
+	var f = document.getElementById('tableForm');
+	f.action="o_delete.do";
+	f.submit();
+}
+
+function getTableForm(){
+	return document.getElementById("tableForm");
+}
+</script>
+</head>
+<body>
+<div class="body-box">
+<div class="rhead">
+	<div class="rpos"><@s.m "global.position"/>: <@s.m "shop.function.product"/> - <@s.m "product.function"/> - <@s.m "global.list"/></div>
+	<form class="ropt">
+		<#if category??>
+		<input type="hidden" name="ctgId" value="${category.id}"/>
+		<input type="submit" value="<@s.m "global.add"/>" onclick="this.form.action='v_add.do';"/>
+		<#else>
+		<div style="padding:5px 0 0 0"><@s.m "product.selectCategory"/></div>
+		</#if>
+	</form>
+	<div class="clear"></div>
+</div>
+<div class="rhead">
+	<form action="v_list.do">
+	 <select name="typeId">
+            <option value="">--商品分类--</option>
+         <#list typeList as productType>
+            <option value="${productType.id}"<#if typeId??> <#if typeId==productType.id>selected="selected"</#if></#if>>${productType.name!}</option>
+         </#list>  
+       </select>
+	<@s.m "product.name"/>:<input type="text" name="productName" value="${productName!}" style="width:100px"/>
+	品牌名称: <input type="text" name="brandName" value="${brandName!}" style="width:100px"/>  
+    <label class="ckl">
+	    <input type="checkbox" id="isOnSale" name="isOnSale" value="true" <#if isOnSale?? && isOnSale> checked="checked"</#if>/><@s.m "product.onSale"/>
+    </label>
+    <label class="ckl">
+	     <input type="checkbox" id="isRecommend" name="isRecommend" value="true" <#if isRecommend?? && isRecommend> checked="checked"</#if>/><@s.m "product.recommend"/>
+    </label>
+    <label class="ckl">
+	      <input type="checkbox" id="isSpecial" name="isSpecial" value="true" <#if isSpecial?? && isSpecial> checked="checked"</#if>/><@s.m "product.special"/>
+    </label>
+    <label class="ckl">
+	     <input type="checkbox" id="isHotsale" name="isHotsale" value="true" <#if isHotsale?? && isHotsale> checked="checked"</#if>/> 热卖
+    </label>
+    <label>
+	    <input type="checkbox" id="isNewProduct" name="isNewProduct" value="true"<#if isNewProduct?? && isNewProduct> checked="checked"</#if> /> 新品
+     </label>
+	  库存:
+	    <input type="text" name="startStock" value="${startStock!}" style="width:50px"/>
+	    &nbsp;至&nbsp;<input type="text" name="endStock" value="${endStock!}" style="width:50px"/>
+		<input type="submit"  class="ropt" value="<@s.m "global.query"/>" />
+	</form>
+	<div class="clear"></div>
+</div>
+<form id="tableForm" method="post">
+<input type="hidden" name="pageNo" value="${pageNo!}"/>
+<input type="hidden" name="ctgId" value="${ctgId!}"/>
+<@p.table value=pagination;product,i,has_next><#rt/>
+	<@p.column title="<input type='checkbox' onclick='Pn.checkbox(\"ids\",this.checked)'/>" width="20">
+		<input type='checkbox' name='ids' value='${product.id}'/><#t/>
+	</@p.column><#t/>
+	<@p.column title="ID" width="20">${product.id!}</@p.column><#t/>
+	<@p.column code="product.name"><a href="${product.url}" target="_blank">${product.name}</a></@p.column><#t/>
+	<@p.column code="product.category">${product.category.name}</@p.column><#t/>
+	<@p.column code="product.type">${product.type.name}</@p.column><#t/>
+	<@p.column code="product.salePrice"><#if product.productFashion??>${product.productFashion.salePrice!}<#else>${product.salePrice!}</#if></@p.column><#t/>
+	<@p.column code="product.stockCount">${product.stockCount}</@p.column><#t/>
+	<@p.column code="product.brand"><#if product.brand??>${(product.brand.name)!}</#if></@p.column><#t/>
+	<@p.column code="product.onSale"><#if product.onSale><@s.m "global.true"/><#else><@s.m "global.false"/></#if></@p.column><#t/>
+	<@p.column code="global.operate" align="center">
+		<a href="v_edit.do?id=${product.id}&pageNo=${pageNo!}&ctgId=${(product.category.id)!}"><@s.m "global.edit"/></a> | <#rt/>
+		<a href="o_delete.do?ids=${product.id}&pageNo=${pageNo!}&ctgId=${(product.category.id)!}" onclick="if(!confirm('<@s.m "global.confirm.delete"/>')) {return false;}"><@s.m "global.delete"/></a><#t/>
+	</@p.column><#t/>
+</@p.table>
+<div><input type="button" value="<@s.m "global.delete"/>" onclick="optDelete();"/></div>
+</form>
+</div>
+<#include "/common/alert_message.html"/>
+</body>
+</html>

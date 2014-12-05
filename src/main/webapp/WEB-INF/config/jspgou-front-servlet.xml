@@ -103,6 +103,7 @@
 				<entry key="money_page" value-ref="money_page"/>
 				<entry key="customerService_list" value-ref="customerService_list"/>
 				<entry key="shop_coupon_page" value-ref="shop_coupon_page"/>
+				<entry key="miaosha_product" value-ref="miaosha_product"/>
 			</map>
 		</property>
 		<property name="templateLoaderPath" value=""/>
@@ -153,4 +154,6 @@
 	<bean id="registerAct" class="com.jspgou.cms.action.member.RegisterAct"/>
 	<bean id="shopMemberAct" class="com.jspgou.cms.action.member.ShopMemberAct"/>
 	<bean id="shopMenberAddressAct" class="com.jspgou.cms.action.member.ShopMenberAddressAct"/>
+	
+	<bean id="miaoShaAction" class="com.jiuba.nb.miaosha.action.MiaoShaAction"/>
 </beans>

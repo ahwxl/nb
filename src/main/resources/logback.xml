@@ -29,7 +29,7 @@
 	<!--
 	-->
 	<logger name="com.jspgou">
-		<level value="ERROR" />
+		<level value="ERROR,INFO" />
 	</logger>
 	<logger name="com.jspgou.common.web.ProcessTimeFilter">
 		<level value="ERROR" />
@@ -44,10 +44,10 @@
 		<level value="ERROR" />
 	</logger>
 	<logger name="org.springframework">
-		<level value="ERROR" />
+		<level value="INFO" />
 	</logger>
 	<logger name="org.springframework.web">
-		<level value="ERROR" />
+		<level value="INFO" />
 	</logger>
 	<logger name="org.hibernate">
 		<level value="ERROR" />

@@ -22,6 +22,7 @@
 	<bean id="shop_productTypeList" class="com.jspgou.cms.action.directive.ProductTypeListDirective"/>
 	<bean id="shop_typeofCategoryList" class="com.jspgou.cms.action.directive.ProductTypeofCategoryListDirective"/>
 	<bean id="shop_productTagList" class="com.jspgou.cms.action.directive.ProductTagListDirective"/>
+	<!-- 商品列表页 -->
 	<bean id="shop_ProductPageChannel" class="com.jspgou.cms.action.directive.ProductPageChannelDirective"/>
 	<bean id="shop_topSale" class="com.jspgou.cms.action.directive.ProductTopSaleDirective"/>
 	<bean id="shop_lucene_page" class="com.jspgou.cms.lucene.LuceneDirectivePage"/>
@@ -41,6 +42,9 @@
 	<bean id="customerService_list" class="com.jspgou.cms.action.directive.CustomerServiceListDirective"/>
 	
 	<bean id="shop_coupon_page" class="com.jspgou.cms.action.directive.CouponPageDirective"></bean>
+	<!-- 秒杀 -->
+	<bean id="miaosha_product" class="com.jiuba.nb.miaosha.directive.MiaoShaProductDirective"></bean>
+	
 	<!--DAO-->
 	<bean id="addressDao" class="com.jspgou.cms.dao.impl.AddressDaoImpl"/>
 	<bean id="shopAdminDao" class="com.jspgou.cms.dao.impl.ShopAdminDaoImpl"/>

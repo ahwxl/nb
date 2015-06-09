@@ -1,11 +1,11 @@
 <form id="jvForm" action="${urlPrefix}${urlSuffix}">
    	 <div class="searchColMainItem searchResultOp">
         <dl>
-            <dt>Æ·ÅÆ£º</dt>
+            <dt>å“ç‰Œï¼š</dt>
               <input type="hidden" name="brandId" id="brandId" value="${brandId!}"/>
               <input type="hidden" name="isShow" id="isShow" value="${isShow!}"/>
               [@cate_brand categoryId=category.id]
-              <dd><span class="all"><a [#if !(brandId??)]class="cur"[/#if] onclick="clickBrand('');">È«²¿</a></span>
+              <dd><span class="all"><a [#if !(brandId??)]class="cur"[/#if] onclick="clickBrand('');">å…¨éƒ¨</a></span>
                   <span class="selection fashion" id="FacetBrandsAll" >
                   [#list tag_list as brd]
                   	 [#if brd_index lt 12]
@@ -18,26 +18,26 @@
               </dd>
               <dd class="more">
                 [#if !(tag_list?size lt 12)]
-                     <a [#if isShow==1]class="pack" style="display:none"[/#if] id="FacetBrandsMoreBtn" onclick="showMore('FacetBrandsAll','more')" href="javascript:void(0)" >¸ü¶à</a>
-                     <a [#if isShow==0]class="pack" style="display:none"[/#if] id="FacetBrandsBackBtn" onclick="showMore('FacetBrandsAll','back')" href="javascript:void(0)" >ÊÕÆğ</a>
+                     <a [#if isShow==1]class="pack" style="display:none"[/#if] id="FacetBrandsMoreBtn" onclick="showMore('FacetBrandsAll','more')" href="javascript:void(0)" >æ›´å¤š</a>
+                     <a [#if isShow==0]class="pack" style="display:none"[/#if] id="FacetBrandsBackBtn" onclick="showMore('FacetBrandsAll','back')" href="javascript:void(0)" >æ”¶èµ·</a>
                  [/#if]
               </dd>
           [/@cate_brand]  
           </dl>
-          <!--ÅĞ¶ÏÊÇÒª±»Òş²ØµÄÊôĞÔ²¿·ÖÊÇ·ñÓĞ±»Ñ¡ÖĞµÄÊôĞÔ£¬Èç¹ûÓĞÔòÏÔÊ¾Òş²Ø²¿·Ö-->
+          <!--åˆ¤æ–­æ˜¯è¦è¢«éšè—çš„å±æ€§éƒ¨åˆ†æ˜¯å¦æœ‰è¢«é€‰ä¸­çš„å±æ€§ï¼Œå¦‚æœæœ‰åˆ™æ˜¾ç¤ºéšè—éƒ¨åˆ†-->
           [#list  map?keys as mykey]
           [#assign mlist=map[mykey]] 
           [#assign st=map1[mykey]]
           [#if 0<(fields?size)]
              <dl class="last">
-             <dt>${st.name!}£º</dt>
+             <dt>${st.name!}ï¼š</dt>
              <dd>
            		 [#list fields as field]
             	 [#if field==st.field]
 					[#list zhis as zhi]
                   	 [#if field_index==zhi_index]
                  	 <span class="all">
-                     	<a [#if zhi=="0"]class="cur" [/#if] onclick="clickchang('exended_${st.field}','');">È«²¿</a>
+                     	<a [#if zhi=="0"]class="cur" [/#if] onclick="clickchang('exended_${st.field}','');">å…¨éƒ¨</a>
                  	 </span>
                   	 <span class="selection">
                      	<input type="hidden" id="exended_${st.field}" name="exended_${st.field}"  value="${zhi}"  />
@@ -53,10 +53,10 @@
          </dl>
 	 		[#else]
 			<dl class="last">
-		              <dt>${st.name!}£º</dt>
+		              <dt>${st.name!}ï¼š</dt>
 		              <dd>
 		                  <span class="all">
-		                     <a class="cur"onclick="clickchang('exended_${st.field}','');">È«²¿</a>
+		                     <a class="cur"onclick="clickchang('exended_${st.field}','');">å…¨éƒ¨</a>
 		                  </span>
 		                  <span class="selection">
 		                     <input type="hidden" id="exended_${st.field}" name="exended_${st.field}"  value=""  />
@@ -69,25 +69,25 @@
 	 		[/#if]
           [/#list]
     </div>
-<!-- ÅÅĞò·½Ê½Óë²¼¾Ö·½Ê½ÇĞ»»Çø -->
+<!-- æ’åºæ–¹å¼ä¸å¸ƒå±€æ–¹å¼åˆ‡æ¢åŒº -->
    <div class="rankOp clearfix">
        <input type="hidden" name="orderBy" id="orderBy" value="${orderBy!}"/>
        <ul class="rank clearfix">
-        <!-- ÅÅĞò·½Ê½ -->
-        <li [#if orderBy==0]class="normal"[/#if]><a onclick="clickOrderBy(0);">Ä¬ÈÏÅÅĞò</a></li>
-        <li [#if orderBy==4]class="down"[#else]class="default"[/#if]><a onclick="clickOrderBy(4);"><span>ÏúÁ¿</span></a></li>
+        <!-- æ’åºæ–¹å¼ -->
+        <li [#if orderBy==0]class="normal"[/#if]><a onclick="clickOrderBy(0);">é»˜è®¤æ’åº</a></li>
+        <li [#if orderBy==4]class="down"[#else]class="default"[/#if]><a onclick="clickOrderBy(4);"><span>é”€é‡</span></a></li>
         [#if orderBy==7]
-        <li class="defaultPrice priceUp"><a onclick="clickOrderBy(6);"><span>¼Û¸ñ</span></a></li>
+        <li class="defaultPrice priceUp"><a onclick="clickOrderBy(6);"><span>ä»·æ ¼</span></a></li>
        [#elseif orderBy==6]
-       <li class="defaultPrice priceDown"><a onclick="clickOrderBy(7);"><span>¼Û¸ñ</span></a></li>
+       <li class="defaultPrice priceDown"><a onclick="clickOrderBy(7);"><span>ä»·æ ¼</span></a></li>
        [#else]
-       <li class="defaultPrice"><a onclick="clickOrderBy(7);" > <span>¼Û¸ñ</span></a></li>
+       <li class="defaultPrice"><a onclick="clickOrderBy(7);" > <span>ä»·æ ¼</span></a></li>
        [/#if]
-        <li class="default"><a onclick="clickOrderBy(1);"><span>ÆÀ¼Û</span></a></li>
-        <li [#if orderBy==2]class="down"[#else]class="default"[/#if]><a onclick="clickOrderBy(2);"><span>ÉÏ¼ÜÊ±¼ä</span></a></li>
+        <li class="default"><a onclick="clickOrderBy(1);"><span>è¯„ä»·</span></a></li>
+        <li [#if orderBy==2]class="down"[#else]class="default"[/#if]><a onclick="clickOrderBy(2);"><span>ä¸Šæ¶æ—¶é—´</span></a></li>
       </ul>
       <ul class="page clearfix">
-          <li><a href="javascript:void(0);">Ã¿Ò³ÏÔÊ¾ÊıÁ¿£º</a></li>
+          <li><a href="javascript:void(0);">æ¯é¡µæ˜¾ç¤ºæ•°é‡ï¼š</a></li>
           <li><a [#if pageSize==2] class="cur"[/#if] onclick="clickPageSize(2);">2</a></li>
           <li><a [#if pageSize==8] class="cur"[/#if] onclick="clickPageSize(8);">8</a></li>
           <li><a [#if pageSize==12] class="cur"[/#if] onclick="clickPageSize(12);">12</a></li>

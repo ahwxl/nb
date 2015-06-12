@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>JSPGOU商品 - ${web.name}${web.additionalTitle!}</title>
+<title>商品 - ${web.name}${web.additionalTitle!}</title>
 <style>
 .box{ width:440px;}
 .box li{ float:left; width:400px; height:100px; margin-right:10px;}
@@ -244,10 +244,10 @@ function addToCollect(productId){
 			 <dt>分&nbsp;&nbsp;享&nbsp;到：</dt>
 			 <dd class="share_ico">
 			 [#if category.colorsize]
-			 	<a class="ico_sina" href="javascript:(function(){var rul=location.href;if(rul.indexOf('?')>0){rul = rul +'&'}else{rul = rul +'?'};rul = rul +'tarcker_u=9402576';window.open(' http://v.t.sina.com.cn/share/share.php?title=【${product.name!}】,JSPGOU价 ￥[#if product.productFashion??]${product.productFashion.salePrice!}[/#if]&url='+encodeURIComponent(rul),'_blank','width=615,height=505');})()">新浪微博</a>
+			 	<a class="ico_sina" href="javascript:(function(){var rul=location.href;if(rul.indexOf('?')>0){rul = rul +'&'}else{rul = rul +'?'};rul = rul +'tarcker_u=9402576';window.open(' http://v.t.sina.com.cn/share/share.php?title=【${product.name!}】,价 ￥[#if product.productFashion??]${product.productFashion.salePrice!}[/#if]&url='+encodeURIComponent(rul),'_blank','width=615,height=505');})()">新浪微博</a>
 			    <a class="ico_qq" href="javascript:void(0)" onclick="posttoWb('http://v.t.qq.com/share/share.php','${product.name!}￥[#if product.productFashion??]${product.productFashion.salePrice!}[/#if]','2fc26c2514bb48ec891170ce68db2683');" >腾讯微博</a>
 			 [#else]
-	            <a class="ico_sina" href="javascript:(function(){var rul=location.href;if(rul.indexOf('?')>0){rul = rul +'&'}else{rul = rul +'?'};rul = rul +'tarcker_u=9402576';window.open(' http://v.t.sina.com.cn/share/share.php?title=【${product.name!}】,JSPGOU价 ￥${product.salePrice!}&url='+encodeURIComponent(rul),'_blank','width=615,height=505');})()">新浪微博</a>
+	            <a class="ico_sina" href="javascript:(function(){var rul=location.href;if(rul.indexOf('?')>0){rul = rul +'&'}else{rul = rul +'?'};rul = rul +'tarcker_u=9402576';window.open(' http://v.t.sina.com.cn/share/share.php?title=【${product.name!}】,价 ￥${product.salePrice!}&url='+encodeURIComponent(rul),'_blank','width=615,height=505');})()">新浪微博</a>
 			    <a class="ico_qq" href="javascript:void(0)" onclick="posttoWb('http://v.t.qq.com/share/share.php','${product.name!}￥${product.salePrice!}','2fc26c2514bb48ec891170ce68db2683');" >腾讯微博</a>
              [/#if]
             </dd>

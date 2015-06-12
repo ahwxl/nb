@@ -101,13 +101,13 @@ function checkUseStatus(useStatus){
                <tr align="center">
                   <td colspan="5">
                   [#if !(status??)&&!(useStatus??)]
-                                                       暂无支出与收入 ，这就去<a href="${base}/" target="_self">JSPGOU商城</a>购买商品获得积分。
+                                                       暂无支出与收入 ，这就去<a href="${base}/" target="_self">商城</a>购买商品获得积分。
                    [#elseif !(status??)&&useStatus==0]
-                                                     暂无收入，这就去<a href="${base}/" target="_self">JSPGOU商城</a>购买商品获得积分。
+                                                     暂无收入，这就去<a href="${base}/" target="_self">商城</a>购买商品获得积分。
                    [#elseif !(status??)&&useStatus==1]
-                                                            暂无支出，这就去<a href="${base}/" target="_self">JSPGOU商城</a>购买商品兑换积分。
+                                                            暂无支出，这就去<a href="${base}/" target="_self">商城</a>购买商品兑换积分。
                    [#elseif !(useStatus??)&&status==0]
-                                                         暂无冻结积分 ，这就去<a href="${base}/" target="_self">JSPGOU商城</a>兑换商品。
+                                                         暂无冻结积分 ，这就去<a href="${base}/" target="_self">商城</a>兑换商品。
                   [/#if]                             
                   </td>
                </tr>

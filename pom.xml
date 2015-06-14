@@ -348,14 +348,14 @@
 		  <version>5.1.8</version>
 		</dependency>
 		<dependency>
-		  <groupId>poi</groupId>
-		  <artifactId>poi</artifactId>
-		  <version>3.5-FINAL</version>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.5-FINAL</version>
 		</dependency>
 		<dependency>
-		  <groupId>quartz</groupId>
+		  <groupId>org.quartz-scheduler</groupId>
 		  <artifactId>quartz</artifactId>
-		  <version>1.6.5</version>
+		  <version>1.7.2</version>
 		</dependency>
 		<dependency>
 		  <groupId>com.sun.mail</groupId>
@@ -368,21 +368,24 @@
 	    <version>2.4</version>
 	    <scope>provided</scope>
 	   </dependency>
-	   <dependency>
+	   <!-- <dependency>
 		  <groupId>com.jspgou.cms</groupId>
 		  <artifactId>jspgou-cms</artifactId>
 		  <version>1.0</version>
+		  <scope>compile</scope>
 		</dependency>
 		<dependency>
 		  <groupId>com.jspgou.cms</groupId>
 		  <artifactId>jspgou-common</artifactId>
 		  <version>1.0</version>
+		  <scope>compile</scope>
 		</dependency>
 		<dependency>
 		  <groupId>com.jspgou.cms</groupId>
 		  <artifactId>jspgou-core</artifactId>
 		  <version>1.0</version>
-		</dependency>
+		  <scope>compile</scope>
+		</dependency> -->
   
   </dependencies>
   
